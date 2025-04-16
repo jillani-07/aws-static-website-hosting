@@ -29,14 +29,14 @@ This project demonstrates how to host a simple static website on AWS S3 using EC
 - Create a simple HTML file:
   ```bash
   echo '<h1>Hello from Jimmy!</h1>' > index.html
-  aws s3 cp error.html s3://test-s3-static-site-demo/
+  aws s3 cp error.html s3://ttset-s3-static-site-demo/
   ```
 
 ### 4. Upload the HTML File to S3
 - Install the AWS CLI on your EC2 instance if not already installed.
 - Upload the HTML file to your S3 bucket:
   ```bash
-  aws s3 cp index.html s3://test-s3-static-site-demo/
+  aws s3 cp index.html s3://ttset-s3-static-site-demo/
   ```
 
 ### 5. Configure S3 Bucket Policy for Public Access
@@ -50,18 +50,18 @@ This project demonstrates how to host a simple static website on AWS S3 using EC
         "Effect": "Allow",
         "Principal": "*",
         "Action": "s3:GetObject",
-        "Resource": "arn:aws:s3:::test-s3-static-site-demo/*"
+        "Resource": "arn:aws:s3:::ttset-s3-static-site-demo/*"
       }
     ]
   }
   ```
 - Apply the policy:
   ```bash
-  aws s3api put-bucket-policy --bucket test-s3-static-site-demo --policy file://bucket-policy.json
+  aws s3api put-bucket-policy --bucket ttset-s3-static-site-demo --policy file://bucket-policy.json
   ```
 
 ### 6. Test Your Static Website
-- After uploading and configuring the policy, open the bucket's URL (e.g., `http://test-s3-static-site-demo.s3-website-us-east-1.amazonaws.com/`).
+- After uploading and configuring the policy, open the bucket's URL (e.g., `http://ttset-s3-static-site-demo.s3-website-us-east-1.amazonaws.com/`).
 - You should see the "Hello from Jimmy!" message.
 
 ## Conclusion
